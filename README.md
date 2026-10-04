@@ -1,4 +1,4 @@
-# UNDERTALE web rebuild (local use only)
+# UNDERTALE web rebuild (only functional locally currently)
 
 A from-scratch HTML + JavaScript rebuild of the decompiled GameMaker project you supplied
 (`undertale-master`). The original game logic (about 5,800 object events plus 170 scripts) is
