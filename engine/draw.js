@@ -422,7 +422,7 @@
     D.fonts.forEach((f, i) => { total++; jobs.push(['f', i, 0, f.file]); });
     let failures = 0;
     return new Promise((resolve) => {
-      let next = 0; const PAR = 64; let active = 0;
+      let next = 0; const PAR = 6; let active = 0;
       const pump = () => {
         while (active < PAR && next < jobs.length) {
           const [t, i, k, url] = jobs[next++]; active++;
