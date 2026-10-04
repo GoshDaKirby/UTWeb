@@ -1,0 +1,283 @@
+obj_adate :: Step_0: repaired inverted instance_exists guard
+obj_alphysfollow_event :: Step_0: repaired inverted instance_exists guard
+obj_backgrounder_castle :: Create_0: character walk sprites referenced by bare numbers
+obj_backgrounder_castle :: Create_0: character walk sprites referenced by bare numbers
+obj_backgrounder_castle :: Create_0: character walk sprites referenced by bare numbers
+obj_backgrounder_castle :: Create_0: character walk sprites referenced by bare numbers
+obj_backgrounder_pillar :: Alarm_0: character walk sprites referenced by bare numbers
+obj_backgrounder_pillar :: Alarm_0: character walk sprites referenced by bare numbers
+obj_backgrounder_pillar :: Alarm_0: character walk sprites referenced by bare numbers
+obj_backgrounder_pillar :: Alarm_0: character walk sprites referenced by bare numbers
+obj_gameover :: Create_0: game over: the broken-heart object was referenced by a bare number
+obj_battlecontroller :: Other_10: repaired inverted instance_exists guard
+obj_papdate :: Step_0: repaired inverted instance_exists guard
+obj_papdate :: Draw_0: Papyrus date heads matched to emotion codes by dialogue
+obj_papdate :: Draw_0: Papyrus date heads matched to emotion codes by dialogue
+obj_papdate :: Draw_0: Papyrus date heads matched to emotion codes by dialogue
+obj_papdate :: Draw_0: Papyrus date heads matched to emotion codes by dialogue
+obj_papdate :: Draw_0: Papyrus date heads matched to emotion codes by dialogue
+obj_papdate :: Draw_0: Papyrus date heads matched to emotion codes by dialogue
+obj_papdate :: Draw_0: Papyrus date heads matched to emotion codes by dialogue
+obj_papdate :: Draw_0: Papyrus date heads matched to emotion codes by dialogue
+obj_papdate :: Draw_0: Papyrus date heads matched to emotion codes by dialogue
+obj_papdate :: Draw_0: Papyrus date heads matched to emotion codes by dialogue
+obj_greatdog :: Create_0: battle monster body part referenced by a bare number
+obj_glydeb :: Create_0: battle monster body part referenced by a bare number
+obj_papyrusboss :: Create_0: battle monster body part referenced by a bare number
+obj_gyftrot :: Create_0: battle monster body part referenced by a bare number
+obj_gyftrot :: Create_0: battle monster body part referenced by a bare number
+obj_mandog :: Create_0: battle monster body part referenced by a bare number
+obj_womandog :: Create_0: battle monster body part referenced by a bare number
+obj_movedoge :: Create_0: battle monster body part referenced by a bare number
+obj_movedoge :: Create_0: battle monster body part referenced by a bare number
+obj_movedoge :: Create_0: battle monster body part referenced by a bare number
+obj_snowdrake :: Create_0: battle monster body part referenced by a bare number
+obj_chilldrake :: Create_0: battle monster body part referenced by a bare number
+obj_shyren :: Create_0: battle monster body part referenced by a bare number
+obj_undynebattle2 :: Create_0: battle monster body part referenced by a bare number
+obj_undyne_ex :: Create_0: battle monster body part referenced by a bare number
+obj_mettatonb_second :: Create_0: battle monster body part referenced by a bare number
+obj_mettatonb_third :: Create_0: battle monster body part referenced by a bare number
+obj_questionasker :: Draw_0: repaired inverted instance_exists guard
+obj_bara02 :: Create_0: Royal Guard body pieces referenced by bare numbers
+obj_bara02 :: Step_0: Royal Guard body pieces referenced by bare numbers
+obj_bara03 :: Create_0: Royal Guard body pieces referenced by bare numbers
+obj_bara03 :: Step_0: Royal Guard body pieces referenced by bare numbers
+obj_bara04 :: Create_0: Royal Guard body pieces referenced by bare numbers
+obj_bara04 :: Step_0: Royal Guard body pieces referenced by bare numbers
+obj_barabody :: Create_0: Royal Guard body pieces referenced by bare numbers
+obj_barabody :: Create_0: Royal Guard body pieces referenced by bare numbers
+obj_barabody :: Create_0: Royal Guard body pieces referenced by bare numbers
+obj_barabody :: Create_0: Royal Guard body pieces referenced by bare numbers
+obj_barabody :: Other_14: Royal Guard body pieces referenced by bare numbers
+obj_barabody :: Other_14: Royal Guard body pieces referenced by bare numbers
+obj_battlebomb :: Create_0: battle monster body part referenced by a bare number
+obj_mett_bossintro :: Step_0: repaired inverted instance_exists guard
+obj_mettaton_neo :: Create_0: battle monster body part referenced by a bare number
+obj_sosorry :: Create_0: battle monster body part referenced by a bare number
+obj_asgoreb_body :: Create_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Create_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Create_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Create_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Create_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Create_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Create_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Create_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Draw_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Draw_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Draw_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Draw_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Draw_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Draw_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Draw_0: Asgore battle body parts matched to their draw offsets
+obj_asgoreb_body :: Draw_0: Asgore battle body parts matched to their draw offsets
+obj_snowdrakemom :: Create_0: battle monster body part referenced by a bare number
+obj_ripoff_undyne :: Create_0: battle monster body part referenced by a bare number
+obj_migospel :: Create_0: battle monster body part referenced by a bare number
+obj_parsnik :: Create_0: battle monster body part referenced by a bare number
+obj_moldessa :: Create_0: battle monster body part referenced by a bare number
+obj_monster_extrabody :: Alarm_0: battle monster body part referenced by a bare number
+obj_monster_extrabody :: Alarm_0: battle monster body part referenced by a bare number
+obj_monster_extrabody :: Alarm_0: battle monster body part referenced by a bare number
+obj_monster_extrabody :: Alarm_0: battle monster body part referenced by a bare number
+obj_monster_extrabody :: Alarm_0: battle monster body part referenced by a bare number
+obj_monster_extrabody :: Alarm_0: battle monster body part referenced by a bare number
+obj_monster_extrabody :: Alarm_0: battle monster body part referenced by a bare number
+obj_monster_extrabody :: Alarm_0: battle monster body part referenced by a bare number
+obj_monster_extrabody :: Alarm_0: battle monster body part referenced by a bare number
+obj_monster_extrabody :: Alarm_0: Royal Guard body pieces referenced by bare numbers
+obj_monster_extrabody :: Alarm_0: Royal Guard body pieces referenced by bare numbers
+blt_sizebone :: Alarm_5: decompiler inverted the wait-for-text check, so losing to Papyrus looped forever instead of sending you to the garage
+obj_face_torieltalk :: Create_0: named face sprites
+obj_face_torieltalk :: Step_0: named face sprites
+obj_face_torielblink :: Create_0: named face sprites
+obj_face_torielblink :: Step_0: named face sprites
+obj_face_floweytalk :: Create_0: named face sprites
+obj_face_floweytalk :: Step_0: named face sprites
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_alphys :: Create_0: Alphys face table: expression k uses spr_alphysface_k
+obj_face_asgore :: Create_0: face table: expression k uses spr_asgore_facek
+obj_face_asgore :: Create_0: face table: expression k uses spr_asgore_facek
+obj_face_asgore :: Create_0: face table: expression k uses spr_asgore_facek
+obj_face_asgore :: Create_0: face table: expression k uses spr_asgore_facek
+obj_face_asgore :: Create_0: face table: expression k uses spr_asgore_facek
+obj_face_asgore :: Create_0: face table: expression k uses spr_asgore_facek
+obj_face_asriel :: Create_0: face table: expression k uses spr_face_asrielk
+obj_face_asriel :: Create_0: face table: expression k uses spr_face_asrielk
+obj_face_asriel :: Create_0: face table: expression k uses spr_face_asrielk
+obj_face_asriel :: Create_0: face table: expression k uses spr_face_asrielk
+obj_face_asriel :: Create_0: face table: expression k uses spr_face_asrielk
+obj_face_asriel :: Create_0: face table: expression k uses spr_face_asrielk
+obj_face_asriel :: Create_0: face table: expression k uses spr_face_asrielk
+obj_face_asriel :: Create_0: face table: expression k uses spr_face_asrielk
+obj_face_asriel :: Create_0: face table: expression k uses spr_face_asrielk
+obj_face_asriel :: Create_0: face table: expression k uses spr_face_asrielk
+obj_face_papyrus :: Create_0: named face sprites
+obj_face_papyrus :: Step_0: named face sprites
+obj_face_sans :: Create_0: named face sprites
+obj_face_sans :: Step_0: named face sprites
+obj_face_undyne :: Create_0: face table: expression k uses spr_face_undynek
+obj_face_undyne :: Create_0: face table: expression k uses spr_face_undynek
+obj_face_undyne :: Create_0: face table: expression k uses spr_face_undynek
+obj_face_undyne :: Create_0: face table: expression k uses spr_face_undynek
+obj_face_undyne :: Create_0: face table: expression k uses spr_face_undynek
+obj_face_undyne :: Create_0: face table: expression k uses spr_face_undynek
+obj_face_undyne :: Create_0: face table: expression k uses spr_face_undynek
+obj_face_undyne :: Create_0: face table: expression k uses spr_face_undynek
+obj_face_undyne :: Create_0: face table: expression k uses spr_face_undynek
+obj_face_undyne :: Create_0: face table: expression k uses spr_face_undynek
+obj_dialoguer :: Destroy_0: repaired inverted face cleanup condition
+obj_dialoguer :: Step_0: repaired inverted face cleanup condition
+OBJ_WRITER :: Alarm_0: repaired mangled backslash string
+OBJ_WRITER :: Draw_0: repaired mangled backslash string
+OBJ_INSTAWRITER :: Draw_0: repaired mangled backslash string
+obj_hivestem :: Create_0: character walk sprites referenced by bare numbers
+obj_hivestem :: Create_0: character walk sprites referenced by bare numbers
+obj_rollsnow :: Step_0: decompiler dropped the parentheses in 50000 - (y*10 + h*k): depth sorting by the feet
+obj_mirrorreflection :: Step_2: decompiler dropped parentheses: the mirror reflects Frisk across the horizon line
+obj_mirrorreflection :: Draw_0: decompiler dropped parentheses: the mirror reflects Frisk across the horizon line
+obj_mkid_goner :: Create_0: character walk sprites referenced by bare numbers
+obj_mkid_goner :: Create_0: character walk sprites referenced by bare numbers
+obj_spaghot :: Create_0: microwave spaghetti heat levels use spr_spaghot_a..h
+obj_spaghot :: Create_0: microwave spaghetti heat levels use spr_spaghot_a..h
+obj_spaghot :: Create_0: microwave spaghetti heat levels use spr_spaghot_a..h
+obj_spaghot :: Create_0: microwave spaghetti heat levels use spr_spaghot_a..h
+obj_spaghot :: Create_0: microwave spaghetti heat levels use spr_spaghot_a..h
+obj_spaghot :: Create_0: microwave spaghetti heat levels use spr_spaghot_a..h
+obj_spaghot :: Create_0: microwave spaghetti heat levels use spr_spaghot_a..h
+obj_spaghot :: Create_0: microwave spaghetti heat levels use spr_spaghot_a..h
+obj_spaghot :: Create_0: microwave spaghetti heat levels use spr_spaghot_a..h
+obj_undynedate_inside :: Step_0: character walk sprites referenced by bare numbers
+obj_undynedate_inside :: Step_0: character walk sprites referenced by bare numbers
+obj_starker :: Create_0: character walk sprites referenced by bare numbers
+obj_starker :: Create_0: character walk sprites referenced by bare numbers
+obj_starker :: Create_0: character walk sprites referenced by bare numbers
+obj_starker :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm1 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm1 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm1 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm1 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm1 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm1 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm1 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm1 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm2 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm2 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm2 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm2 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm2 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm2 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm2 :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_farm2 :: Create_0: character walk sprites referenced by bare numbers
+obj_mkid_actor :: Create_0: character walk sprites referenced by bare numbers
+obj_undynea_actor :: Create_0: character walk sprites referenced by bare numbers
+obj_undynea_actor :: Create_0: character walk sprites referenced by bare numbers
+obj_undynea_actor2 :: Create_0: character walk sprites referenced by bare numbers
+obj_monsterkidtrigger7 :: Step_0: repaired inverted instance_exists guard
+obj_napstablook_actor :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_actor :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_actor :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_actor :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_actor :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_actor :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_actor :: Create_0: character walk sprites referenced by bare numbers
+obj_napstablook_actor :: Create_0: character walk sprites referenced by bare numbers
+obj_mettanchor :: Create_0: news anchor poses use the spr_mettanchor_* set
+obj_mettanchor :: Create_0: news anchor poses use the spr_mettanchor_* set
+obj_mettanchor :: Create_0: news anchor poses use the spr_mettanchor_* set
+obj_mettanchor :: Create_0: news anchor poses use the spr_mettanchor_* set
+obj_mettanchor :: Create_0: news anchor poses use the spr_mettanchor_* set
+obj_mettanchor :: Create_0: news anchor poses use the spr_mettanchor_* set
+obj_mettanchor :: Create_0: news anchor poses use the spr_mettanchor_* set
+obj_mettanchor :: Create_0: news anchor poses use the spr_mettanchor_* set
+obj_mettanchor :: Create_0: news anchor poses use the spr_mettanchor_* set
+obj_papyrus7 :: Step_0: Gauntlet of Deadly Terror parts
+obj_papyrus7 :: Step_0: Gauntlet of Deadly Terror parts
+obj_papyrus7 :: Step_0: Gauntlet of Deadly Terror parts
+obj_papyrus7 :: Step_0: Gauntlet of Deadly Terror parts
+obj_papyrus7 :: Step_0: Gauntlet of Deadly Terror parts
+obj_powerlaser_event :: Step_0: repaired inverted instance_exists guard
+obj_alphystrigger2 :: Step_0: repaired inverted instance_exists guard
+obj_watercooler :: Other_11: character walk sprites referenced by bare numbers
+obj_watercooler :: Other_11: character walk sprites referenced by bare numbers
+obj_watercooler :: Other_11: character walk sprites referenced by bare numbers
+obj_watercooler :: Other_11: character walk sprites referenced by bare numbers
+obj_rollgrow :: Step_0: decompiler dropped the parentheses in 50000 - (y*10 + h*k): depth sorting by the feet
+obj_sansbullet_parent :: Other_17: typo innage_karma -> innate_karma (karma reduction never happened)
+obj_shop1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_shop1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_shop1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_shop1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_shop1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_shop1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_shopmouth1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_shopmouth1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_shopmouth1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_shopmouth1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_shopmouth1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_shopmouth1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_shopmouth1 :: Create_0: shopkeeper face k uses spr_shopkeeper1_facek
+obj_soundtest :: Draw_0: sound test LEFT key moved forward instead of back
+obj_spidertalkevent :: Step_0: repaired inverted instance_exists guard
+obj_grillbynpc_sansdate :: Step_0: repaired inverted instance_exists guard
+obj_townnpc_monsterkid1 :: Create_0: character walk sprites referenced by bare numbers
+obj_undyne1 :: Step_0: repaired inverted instance_exists guard
+obj_mainchara :: Create_0: character walk sprites referenced by bare numbers
+obj_mainchara :: Create_0: character walk sprites referenced by bare numbers
+obj_mainchara :: Create_0: character walk sprites referenced by bare numbers
+obj_mainchara :: Create_0: character walk sprites referenced by bare numbers
+obj_mainchara :: Step_2: object reference lost (written as 0): the parallax backgrounds (Waterfall castle, Snowdin, Core, dock, last Ruins corridor) never scrolled
+obj_mainchara :: Step_0: decompiler dropped the parentheses in 50000 - (y*10 + h*k): depth sorting by the feet
+obj_flowey_master :: Draw_0: typo facemotion -> faceemotion
+obj_flowey_writer :: Alarm_0: repaired mangled backslash string
+obj_flowey_writer :: Draw_0: repaired mangled backslash string
+obj_wanderparent :: Create_0: character walk sprites referenced by bare numbers
+obj_wanderparent :: Create_0: character walk sprites referenced by bare numbers
+obj_wanderparent :: Create_0: character walk sprites referenced by bare numbers
+obj_wanderparent :: Create_0: character walk sprites referenced by bare numbers
+obj_wanderparent :: Create_0: character walk sprites referenced by bare numbers
+obj_wanderparent :: Create_0: character walk sprites referenced by bare numbers
+obj_wanderparent :: Create_0: character walk sprites referenced by bare numbers
+obj_wanderparent :: Create_0: character walk sprites referenced by bare numbers
+object466 :: Step_0: decompiler dropped the parentheses in 50000 - (y*10 + h*k): depth sorting by the feet
+SCRIPT SCR_TEXT: repaired inverted instance_exists guard
+SCRIPT SCR_TEXT: character walk sprites referenced by bare numbers
+SCRIPT SCR_TEXT: character walk sprites referenced by bare numbers
+SCRIPT SCR_TEXT: character walk sprites referenced by bare numbers
+SCRIPT SCR_TEXT: character walk sprites referenced by bare numbers
+SCRIPT SCR_TEXT: character walk sprites referenced by bare numbers
+SCRIPT SCR_TEXT: character walk sprites referenced by bare numbers
+SCRIPT scr_namingscreen: MTT name check compared against a lowercased string
+SCRIPT scr_depth: decompiler dropped the parentheses in 50000 - (y*10 + h*k): depth sorting by the feet
+SCRIPT scr_newvapordata: restored "m" characters in vapor data
+SCRIPT SCR_TEXTTYPE: repaired decimal commas
+SCRIPT scr_turnb: character walk sprites referenced by bare numbers
+SCRIPT scr_turnb: character walk sprites referenced by bare numbers
+SCRIPT scr_turnb: character walk sprites referenced by bare numbers
+SCRIPT scr_turnb: character walk sprites referenced by bare numbers
+SCRIPT SCR_TEXTTYPE_f: repaired decimal commas
+unknown functions: 
