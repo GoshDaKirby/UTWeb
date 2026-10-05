@@ -7,7 +7,7 @@ for the browser. No plugins, no server, no build step needed to play.
 
 ---
 ## How to run it via GitHub Pages
-1. **Go to: **goshdakirby.github.io/UTWeb
+1. **Go to:** goshdakirby.github.io/UTWeb
 2. **That's it!**
 
 ## How to run it locally
