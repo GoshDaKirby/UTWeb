@@ -6,7 +6,7 @@ translated from GML into JavaScript and runs on a small GameMaker-compatible eng
 for the browser. No plugins, no server, no build step needed to play.
 
 ---
-## How to run it via GitHub Pages
+## How to run it via GitHub Pages **(works with mobile devices!)**
 1. **Go to:** [goshdakirby.github.io/UTWeb](goshdakirby.github.io/UTWeb)
 2. **That's it!**
 
