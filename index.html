@@ -10,7 +10,7 @@
   #screen { position: relative; }
   #game { display: block; image-rendering: pixelated; image-rendering: crisp-edges; background: #000; }
   .overlay { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; flex-direction: column; background: rgba(0,0,0,.85); text-align: center; gap: 12px; font-size: 16px; }
-  #status { position: absolute; left: 0; right: 0; bottom: 8px; text-align: center; color: #888; font-size: 13px; pointer-events: none; }
+  #status { position: absolute; z-index: 1; left: 0; right: 0; bottom: 8px; text-align: center; color: #888; font-size: 13px; pointer-events: none; }
   #errors { position: absolute; left: 4px; top: 4px; max-width: 60%; display: none; background: rgba(80,0,0,.8); color: #fdd; font-size: 11px; padding: 4px; pointer-events: none; }
   button { font: inherit; background: #000; color: #fff; border: 2px solid #fff; padding: 6px 14px; cursor: pointer; }
 </style>
@@ -23,6 +23,7 @@
 <script src="engine/runtime.js"></script>
 <script src="engine/draw.js"></script>
 <script src="engine/input.js"></script>
+<script src="engine/touch.js"></script>
 <script src="engine/audio.js"></script>
 <script src="engine/storage.js"></script>
 <script src="engine/paths.js"></script>

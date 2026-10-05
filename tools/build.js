@@ -121,6 +121,7 @@ function translate(where, code, objName, eventKey, isScript) {
   const scan = (s) => { let m; while ((m = re.exec(s))) allCalls.add(m[1]); };
   for (const o of maps.objects) scan(rd('objects/' + o + '.object.gmx'));
   for (const s of maps.scripts) scan(rd('scripts/' + s + '.gml'));
+  for (const r of [...(extra.restorations || []), ...(extra.bugfixes || [])]) scan(r.replace);
   const kw = new Set(['if', 'while', 'repeat', 'with', 'switch', 'return', 'exit', 'for', 'until']);
   BUILTINS = new Set([...allCalls].filter(n => !scriptNames.has(n) && !kw.has(n)));
 }
@@ -206,6 +207,9 @@ const roomsData = maps.rooms.map((name, ri) => {
   for (const bm of s.matchAll(/<background ([^>]*)\/>/g)) {
     const a = attrs(bm[1]);
     r.backgrounds.push({ visible: num(a.visible) !== 0, foreground: num(a.foreground) !== 0, bg: idx.backgrounds.has(a.name) ? idx.backgrounds.get(a.name) : -1, x: num(a.x), y: num(a.y), htiled: num(a.htiled) !== 0, vtiled: num(a.vtiled) !== 0, hspeed: num(a.hspeed), vspeed: num(a.vspeed), stretch: num(a.stretch) !== 0 });
+  }
+  if (extra.roomViews && extra.roomViews[name]) {
+    for (const [vi, vv] of Object.entries(extra.roomViews[name])) r.views[+vi] = { ...r.views[+vi], ...vv };
   }
   if (extra.roomBackgrounds && extra.roomBackgrounds[name]) {
     const ov = extra.roomBackgrounds[name];

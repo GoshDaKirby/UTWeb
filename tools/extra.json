@@ -5866,6 +5866,32 @@
     "vspeed": 0,
     "stretch": false
    }
+  ],
+  "room_water_undynefinal": [
+   {
+    "visible": true,
+    "foreground": false,
+    "bg": "bg_undynecrag",
+    "x": 0,
+    "y": 0,
+    "htiled": false,
+    "vtiled": false,
+    "hspeed": 0,
+    "vspeed": 0,
+    "stretch": false
+   },
+   {
+    "visible": true,
+    "foreground": false,
+    "bg": "bg_waterfalltex",
+    "x": 105,
+    "y": -70,
+    "htiled": true,
+    "vtiled": false,
+    "hspeed": 0,
+    "vspeed": 0,
+    "stretch": false
+   }
   ]
  },
  "roomBackgroundNotes": "The decompiler dropped room background layers (or repeated the second layer's name). These are restored by matching unused background images to rooms by size and wall layout. The stairwell layer in both houses was exported as tiled and scrolling (vspeed 1); it is placed once, filling the stairwell opening.",
@@ -7405,6 +7431,12 @@
    "find": "with(0) event_user(0);",
    "replace": "with(obj_backgrounder_parent) event_user(0);",
    "note": "object reference lost (written as 0): the parallax backgrounds (Waterfall castle, Snowdin, Core, dock, last Ruins corridor) never scrolled"
+  },
+  {
+   "where": "obj_gameover :: Step_0",
+   "find": "script_execute(58/* scr_tempload */);\n    instance_destroy();",
+   "replace": "script_execute(58/* scr_tempload */);\n    with(all) if(!persistent && id != other.id) instance_deactivate_object(id);\n    instance_destroy();",
+   "note": "after the load, the battle's room is left this frame; its cutscene objects (Mad Dummy's trigger) kept running for one more step and locked the player in place in the loaded save"
   }
  ],
  "spriteIndexFixes": {
@@ -7715,6 +7747,12 @@
     3,
     5
    ]
+  },
+  "spr_undynea_rfall": {
+   "spr_undynea_rfall_0": [
+    4,
+    16
+   ]
   }
  },
  "frameOffsetsNote": "Hand-checked frame positions where the automatic trim recovery guesses wrong. Grillby behind the counter is lined up with his walking sprite so he stands behind the bar.",
@@ -7792,5 +7830,22 @@
   "435": "mus_crickets",
   "438": "mus_express_myself"
  },
- "soundIndexFixesNote": "Sound numbers the index table had guessed. Taken from scr_getmusindex, which pairs every music file path with its sound number."
+ "soundIndexFixesNote": "Sound numbers the index table had guessed. Taken from scr_getmusindex, which pairs every music file path with its sound number.",
+ "roomViews": {
+  "room_water_undynefinal": {
+   "1": {
+    "visible": false,
+    "obj": -4,
+    "xview": 0,
+    "yview": 650,
+    "wview": 320,
+    "hview": 90,
+    "xport": 0,
+    "yport": 300,
+    "wport": 640,
+    "hport": 180
+   }
+  }
+ },
+ "roomViewsNote": "View settings lost in export. In Undyne's speech the camera zooms and tilts on her (view 0) while view 1 keeps the text box at the bottom of the screen upright."
 }

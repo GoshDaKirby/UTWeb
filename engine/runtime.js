@@ -317,7 +317,13 @@
     const rd = D.rooms[ri];
     R.room = ri; R.roomW = rd.w; R.roomH = rd.h; R.room_speed = rd.speed;
     if (R.roomPersistent[ri] === undefined) R.roomPersistent[ri] = !!rd.persistent;
-    const saved = R.savedRooms.get(ri);
+    let saved = R.savedRooms.get(ri);
+    if (saved && !R.roomPersistent[ri]) {
+      // made non-persistent since it was left (room_set_persistent(room, false), as loading a save does after a
+      // battle): GameMaker throws the stored state away and builds the room fresh
+      for (const inst of saved.instances) inst.$dead = true;
+      R.savedRooms.delete(ri); saved = null;
+    }
     if (saved) {
       // persistent room: restore state
       R.savedRooms.delete(ri);
@@ -510,8 +516,9 @@
       if (o === undefined || o < 0) continue;
       const inst = o >= 100000 ? R.byId.get(o) : firstOf(o);
       if (!inst) continue;
-      const hb = R.view_hborder[v], vb = R.view_vborder[v];
       let vx = R.view_xview[v], vy = R.view_yview[v]; const vw = R.view_wview[v], vh = R.view_hview[v];
+      // a border wider than half the view keeps the object centred
+      const hb = Math.min(R.view_hborder[v], vw / 2), vb = Math.min(R.view_vborder[v], vh / 2);
       if (inst.x - hb < vx) vx = inst.x - hb; if (inst.x + hb > vx + vw) vx = inst.x + hb - vw;
       if (inst.y - vb < vy) vy = inst.y - vb; if (inst.y + vb > vy + vh) vy = inst.y + vb - vh;
       vx = Math.max(0, Math.min(vx, R.roomW - vw)); vy = Math.max(0, Math.min(vy, R.roomH - vh));

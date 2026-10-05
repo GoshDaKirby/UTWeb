@@ -1,4 +1,4 @@
-# UNDERTALE web rebuild (only functional locally currently)
+# UNDERTALE web rebuild (local use only)
 
 A from-scratch HTML + JavaScript rebuild of the decompiled GameMaker project you supplied
 (`undertale-master`). The original game logic (about 5,800 object events plus 170 scripts) is
@@ -71,6 +71,20 @@ On Windows with WSL you can also copy the folder to
 
 A gamepad also works (through the game's own joystick settings).
 
+### Phones and tablets
+
+On a touch screen the page adds on-screen controls: a joystick on the left for moving (it
+works in 8 directions, like holding two arrow keys) and Z (confirm), X (cancel) and C (menu)
+buttons on the right. Held the long way up, the game sits at the top and the controls sit
+underneath it; turned sideways, the controls sit on either side of the game. Either way they
+never cover the picture, and the layout switches by itself when you rotate the device. The
+small square button opens fullscreen. Add `?touch=1` to the address to force the controls on
+(for example on a touch screen laptop) or `?touch=0` to hide them.
+
+Phone browsers usually cannot open a page straight from a file, so serve the folder from your
+computer instead: run `python -m http.server 8000` in the `UndertaleWeb` folder, then on the
+phone (on the same Wi-Fi) open `http://<your computer's IP address>:8000`.
+
 Sound starts after your first click or key press because browsers block audio until you
 interact with the page. The music is in `.ogg` format: Chrome, Edge and Firefox play it; older
 Safari versions do not (the page shows a notice if that happens).
@@ -92,6 +106,8 @@ Add these after `index.html` in the address bar (for example
 | `?errors` | Shows any script errors in a small red box in the corner |
 | `?seed=123` | Makes the random number generator deterministic |
 | `?autostart` | Skips the "press any key" screen |
+| `?touch=1` / `?touch=0` | Forces the on-screen touch controls on or off |
+| `?par=4` | Loads fewer images at once (default 16). Use a small number if loading stalls or fails on a slow machine |
 
 ---
 
@@ -131,12 +147,14 @@ Add these after `index.html` in the address bar (for example
 - **Wrong frame positions** for Grillby behind the bar (he sat on the counter instead of behind it,
   now lined up with his walking sprite), for the dark-room shadow under Frisk before Undyne's
   first scene (it was drawn at head height) and for Undyne's floor spears (the blue warning
-  circle sat at the spear tip instead of on the floor).
+  circle sat at the spear tip instead of on the floor) and for Undyne collapsing in Hotland (she
+  lay in mid air above the floor).
 - **Lost "camera follows player" setting** in every room. The camera now follows and clamps to
   the room edge like the original.
-- **Lost room background layers** in 19 rooms (the Ruins entrance, the Ruins city view where the
-  toy knife is, the stairwells in Toriel's and Asgore's houses, Undyne's house, the shops and
-  others) are restored from the unused background images.
+- **Lost room background layers** in 21 rooms (the Ruins entrance, the Ruins city view where the
+  toy knife is, the stairwells in Toriel's and Asgore's houses, Undyne's house, the castle in the
+  Waterfall rain walk, the crag Undyne stands on before her fight, the shops and others) are
+  restored from the unused background images.
 - **Missing path data.** All 38 movement paths (Toriel's walks, the Froggit head bob,
   Papyrus's moves and more) were rebuilt from the room layouts and the code that uses them.
 - **A missing room.** The Hotland room between the hot dog stand and the "sorry" room was not
@@ -207,6 +225,17 @@ Add these after `index.html` in the address bar (for example
 - Movement paths that are started paused (speed 0) wait instead of ending at once, and a paused
   path no longer overrides positions the game sets by hand. This is what
   kept Toriel frozen in place in the spike room.
+- Images load 16 at a time, and an image that fails to load is retried a few times before it
+  counts as missing, so slow machines no longer stop with "Could not find the game files".
+- A room made non-persistent after you leave it (loading a save does this to the room a battle
+  started from) is rebuilt fresh the next time, as in GameMaker. And on Continue after a game
+  over, the battle's room stops running the moment the save loads; before, Mad Dummy's cutscene
+  ran one more step and left Frisk unable to move.
+- Views follow GameMaker more closely: `view_angle` tilts the view, a follow border wider than half
+  the view keeps the followed object centred, and a view switched on by an earlier view's Draw
+  event is drawn in the same frame. Together with view 1's lost settings for that room, this
+  restores the tilted close ups of Undyne during her speech before the fight, with the text box
+  staying upright at the bottom.
 - Sounds a browser refuses to start are retried on your next key press, and finished sound
   players are released so long play sessions do not run out of them.
 - Runs at a fixed 30 frames per second like the original, scaled to fit the window with

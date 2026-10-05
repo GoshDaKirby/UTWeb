@@ -9,6 +9,7 @@ obj_backgrounder_pillar :: Alarm_0: character walk sprites referenced by bare nu
 obj_backgrounder_pillar :: Alarm_0: character walk sprites referenced by bare numbers
 obj_backgrounder_pillar :: Alarm_0: character walk sprites referenced by bare numbers
 obj_gameover :: Create_0: game over: the broken-heart object was referenced by a bare number
+obj_gameover :: Step_0: after the load, the battle's room is left this frame; its cutscene objects (Mad Dummy's trigger) kept running for one more step and locked the player in place in the loaded save
 obj_battlecontroller :: Other_10: repaired inverted instance_exists guard
 obj_papdate :: Step_0: repaired inverted instance_exists guard
 obj_papdate :: Draw_0: Papyrus date heads matched to emotion codes by dialogue

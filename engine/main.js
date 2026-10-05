@@ -10,7 +10,11 @@
 
   function fit() {
     const wrap = $('screen'); const c = UT.G.canvas;
-    const W = window.innerWidth, H = window.innerHeight - (document.fullscreenElement ? 0 : 0);
+    // on touch devices the on-screen controls take the sides (landscape) or the bottom (portrait)
+    let area = { x: 0, y: 0, w: window.innerWidth, h: window.innerHeight };
+    if (UT.touch && UT.touch.active) area = UT.touch.layout();
+    Object.assign($('wrap').style, { left: area.x + 'px', top: area.y + 'px', width: area.w + 'px', height: area.h + 'px', right: 'auto', bottom: 'auto' });
+    const W = area.w, H = area.h;
     let scale = Math.min(W / 640, H / 480);
     if (cfg.integerScale !== false && scale >= 1) scale = Math.max(1, Math.floor(scale * 100) / 100);
     c.style.width = Math.floor(640 * scale) + 'px'; c.style.height = Math.floor(480 * scale) + 'px';
@@ -58,19 +62,28 @@
     c.width = 640; c.height = 480;
     UT.G.ctx = c.getContext('2d', { alpha: false });
     UT.G.ctx.imageSmoothingEnabled = false;
-    fit(); window.addEventListener('resize', fit);
+    fit(); window.addEventListener('resize', fit); window.addEventListener('orientationchange', () => setTimeout(fit, 150));
+    if (window.visualViewport) window.visualViewport.addEventListener('resize', fit);
     document.addEventListener('fullscreenchange', fit);
     if (!window.UT_DATA || !window.UT_CODE) { setStatus('Game data missing: run the build step (see README).'); return; }
     UT.D = window.UT_DATA;
     UT.audio.base = base;
     setStatus('Loading graphics...');
     const failures = await UT.loadAssets(base, (d, t) => setStatus('Loading graphics... ' + Math.floor(d / t * 100) + '%'));
-    if (failures > 100) {
+    const total = UT.D.sprites.reduce((a, s) => a + s.frames.length, 0) + UT.D.backgrounds.length + UT.D.fonts.length;
+    if (failures > total * 0.9) {
       setStatus('Could not find the game files. Put the "undertale-master" folder next to index.html (see README).');
       return;
     }
+    if (failures > 0) {
+      console.warn(failures + ' images failed to load');
+      if (failures > 100) {
+        setStatus(failures + ' images failed to load. Reload the page, or add ?par=4 to the address to load fewer at once (see README).');
+        return;
+      }
+    }
     UT.assetsReady = true;
-    setStatus('Click or press any key to start');
+    setStatus(UT.touch && UT.touch.active ? 'Tap to start' : 'Click or press any key to start');
     $('start').style.display = 'flex';
     const go = () => {
       if (UT.started) return; UT.started = true;

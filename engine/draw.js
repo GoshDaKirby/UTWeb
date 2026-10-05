@@ -380,7 +380,10 @@
       drawScene(null);
       c.restore();
     } else {
-      for (const v of views) {
+      // a view can be switched on by a Draw event of an earlier view in the same frame (GameMaker checks each view
+      // as it gets to it), so visibility is re-read here
+      for (let v = 0; v < 8; v++) {
+        if (!R.view_visible[v]) continue;
         R.view_current = v;
         const vx = UT.$num(R.view_xview[v]), vy = UT.$num(R.view_yview[v]), vw = UT.$num(R.view_wview[v]), vh = UT.$num(R.view_hview[v]);
         const px = R.view_xport[v], py = R.view_yport[v], pw = R.view_wport[v], ph = R.view_hport[v];
@@ -391,6 +394,14 @@
         if (R.background_showcolor) { c.fillStyle = css(R.background_color); c.fillRect(px, py, pw, ph); }
         c.setTransform(sx, 0, 0, sy, px - vx * sx, py - vy * sy);
         G.viewTransform = [sx, sy, px - vx * sx, py - vy * sy];
+        const ang = UT.$num(R.view_angle[v]);
+        if (ang) {
+          // view_angle turns the view around its centre
+          c.setTransform(1, 0, 0, 1, px + pw / 2, py + ph / 2);
+          c.rotate(ang * Math.PI / 180);
+          c.scale(sx, sy);
+          c.translate(-(vx + vw / 2), -(vy + vh / 2));
+        }
         drawScene(v);
         c.restore();
       }
@@ -410,19 +421,33 @@
   UT.loadAssets = function (base, onProgress) {
     const D = UT.D;
     const jobs = [];
-    const load = (url) => new Promise((res) => {
+    // Slow machines and file:// pages can drop image loads when too many run at once, so the number in flight is
+    // limited (?par=N to change it, default 16) and a failed image is retried a few times before giving up.
+    const qpar = parseInt(new URLSearchParams(location.search).get('par'), 10);
+    const PAR = qpar > 0 ? qpar : 16;
+    const once = (url) => new Promise((res) => {
       const img = new Image();
       img.onload = () => res(img);
-      img.onerror = () => { console.warn('missing image', url); res(img); };
+      img.onerror = () => res(img);
       img.src = base + url;
     });
+    const load = async (url) => {
+      let img = null;
+      for (let attempt = 0; attempt < 5; attempt++) {
+        if (attempt) await new Promise(r => setTimeout(r, 150 * attempt));
+        img = await once(url);
+        if (img.naturalWidth) return img;
+      }
+      console.warn('missing image', url);
+      return img;
+    };
     let done = 0, total = 0;
     D.sprites.forEach((s, i) => { G.spriteImgs[i] = []; s.frames.forEach((f, k) => { total++; jobs.push(['s', i, k, 'sprites/' + f]); }); });
     D.backgrounds.forEach((b, i) => { total++; jobs.push(['b', i, 0, b.file]); });
     D.fonts.forEach((f, i) => { total++; jobs.push(['f', i, 0, f.file]); });
     let failures = 0;
     return new Promise((resolve) => {
-      let next = 0; const PAR = 6; let active = 0;
+      let next = 0; let active = 0;
       const pump = () => {
         while (active < PAR && next < jobs.length) {
           const [t, i, k, url] = jobs[next++]; active++;

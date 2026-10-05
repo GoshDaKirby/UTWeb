@@ -11230,6 +11230,13 @@ OBJ[153] = {
   {
     R.room_persistent = 0;
     F.script_execute(self, other, 58);
+    { const _t0 = self;
+    for (const _t1 of $withList(-3, self, other)) {
+      if (_t1.$dead) continue;
+      const self = _t1, other = _t0;
+      if ($t(($t(!$t(self.persistent)) && $t(!$eq(self.id, other.id)))))
+        F.instance_deactivate_object(self, other, self.id);
+    } }
     F.instance_destroy(self, other);
   }
   }
