@@ -1,12 +1,9 @@
-# UNDERTALE web rebuild (local use only)
+# UNDERTALE web rebuild
 
-A from-scratch HTML + JavaScript rebuild of the decompiled GameMaker project you supplied
+A from-scratch HTML + JavaScript rebuild of the decompiled GameMaker project of UNDERTALE
 (`undertale-master`). The original game logic (about 5,800 object events plus 170 scripts) is
 translated from GML into JavaScript and runs on a small GameMaker-compatible engine written
 for the browser. No plugins, no server, no build step needed to play.
-
-This folder does not contain the game's art, sound or text data. It reads them from your own
-copy of `undertale-master` at runtime. Keep it on your machine; don't publish it.
 
 ---
 
@@ -14,30 +11,10 @@ copy of `undertale-master` at runtime. Keep it on your machine; don't publish it
 
 1. **Unzip** `UndertaleWeb.zip` somewhere, for example your Desktop. You get a folder called
    `UndertaleWeb` containing `index.html`, `engine`, `data`, `tools` and this README.
-2. **Add the game files.** Unzip the `undertale-master.zip` you gave me and put the
-   `undertale-master` folder *inside* `UndertaleWeb`, right next to `index.html`:
-
-   ```
-   UndertaleWeb/
-     index.html
-     README.md
-     engine/
-     data/
-     tools/
-     undertale-master/      <- your folder goes here
-       background/
-       fonts/
-       sound/
-       sprites/
-       ...
-   ```
-
-   The folder name must be exactly `undertale-master`, and `sprites`, `sound` and friends
-   must be directly inside it (not inside a second `undertale-master` folder).
-3. **Double-click `index.html`.** It opens in your default browser. Wait for "Loading
+2. **Double-click `index.html`.** It opens in your default browser. Wait for "Loading
    graphics..." to finish, then click or press any key to start.
 
-That's it. Chrome, Edge and Firefox all work straight from the file.
+That's it. Most web-browsers all work straight from the file.
 
 ### If double-clicking doesn't work
 
