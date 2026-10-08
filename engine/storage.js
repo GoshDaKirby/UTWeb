@@ -78,4 +78,25 @@
     write(sec, key, v) { if (!ini) return; (ini.data[sec] = ini.data[sec] || {})[key] = typeof v === 'number' ? String(v) : String(v); ini.dirty = true; },
     sectionExists(sec) { return ini && ini.data[sec] ? 1 : 0; },
   };
+  // ------------------------------------------------------------------ save backup (start screen)
+  // Every save file the game writes (file0, file9, undertale.ini, config.ini ...) lives in browser storage under
+  // PREFIX. Export bundles them into one JSON file; import replaces the current set with the bundle's contents.
+  const FORMAT = 'undertale-web-save';
+  UT.saves = {
+    count() { return FS.list().filter(n => n !== '__probe').length; },
+    exportText() {
+      const files = {};
+      for (const n of FS.list()) if (n !== '__probe') files[n] = FS.read(n);
+      return JSON.stringify({ format: FORMAT, version: 1, exported: new Date().toISOString(), files }, null, 1);
+    },
+    importText(text) {
+      let d; try { d = JSON.parse(text); } catch (e) { throw new Error('That file is not a save export (it is not valid JSON).'); }
+      if (!d || d.format !== FORMAT || typeof d.files !== 'object' || !d.files) throw new Error('That file is not an Undertale web save export.');
+      const names = Object.keys(d.files).filter(n => typeof d.files[n] === 'string');
+      if (!names.length) throw new Error('That export has no save files in it.');
+      FS.clearAll();
+      for (const n of names) FS.write(n, d.files[n]);
+      return names.length;
+    },
+  };
 })();

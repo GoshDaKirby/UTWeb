@@ -207,6 +207,8 @@ obj_napstablook_actor :: Create_0: character walk sprites referenced by bare num
 obj_napstablook_actor :: Create_0: character walk sprites referenced by bare numbers
 obj_napstablook_actor :: Create_0: character walk sprites referenced by bare numbers
 obj_napstablook_actor :: Create_0: character walk sprites referenced by bare numbers
+obj_tileguy :: Other_10: purple tiles slide (bare object number had been matched to obj_tilegreen)
+obj_tileguy :: Other_10: green tiles stop and play the sound (bare number had been matched to obj_tilepurple)
 obj_mettanchor :: Create_0: news anchor poses use the spr_mettanchor_* set
 obj_mettanchor :: Create_0: news anchor poses use the spr_mettanchor_* set
 obj_mettanchor :: Create_0: news anchor poses use the spr_mettanchor_* set
@@ -221,8 +223,13 @@ obj_papyrus7 :: Step_0: Gauntlet of Deadly Terror parts
 obj_papyrus7 :: Step_0: Gauntlet of Deadly Terror parts
 obj_papyrus7 :: Step_0: Gauntlet of Deadly Terror parts
 obj_papyrus7 :: Step_0: Gauntlet of Deadly Terror parts
+obj_blackbox_o :: Other_13: white boxes block the black boxes
+obj_blackbox_o :: Other_12: white boxes block the black boxes
+obj_blackbox_o :: Other_11: white boxes block the black boxes
+obj_blackbox_o :: Other_10: white boxes block the black boxes (bare object number guessed as obj_papyrusbody)
 obj_powerlaser_event :: Step_0: repaired inverted instance_exists guard
 obj_alphystrigger2 :: Step_0: repaired inverted instance_exists guard
+obj_alphystrigger2 :: Step_0: lost parentheses after a minus: Alphys never knew she had reached Frisk and kept running
 obj_watercooler :: Other_11: character walk sprites referenced by bare numbers
 obj_watercooler :: Other_11: character walk sprites referenced by bare numbers
 obj_watercooler :: Other_11: character walk sprites referenced by bare numbers
@@ -275,6 +282,7 @@ SCRIPT SCR_TEXT: character walk sprites referenced by bare numbers
 SCRIPT scr_namingscreen: MTT name check compared against a lowercased string
 SCRIPT scr_depth: decompiler dropped the parentheses in 50000 - (y*10 + h*k): depth sorting by the feet
 SCRIPT scr_newvapordata: restored "m" characters in vapor data
+SCRIPT scr_npc_watch: lost parentheses after a minus: characters turned the wrong way to look at Frisk
 SCRIPT SCR_TEXTTYPE: repaired decimal commas
 SCRIPT scr_turnb: character walk sprites referenced by bare numbers
 SCRIPT scr_turnb: character walk sprites referenced by bare numbers

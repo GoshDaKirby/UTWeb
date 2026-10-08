@@ -162,7 +162,10 @@ maps.objects.forEach((name, oi) => {
       else console.warn('unhandled action', id, name, key);
     }
     const js = translate(name + ' :: ' + key, code, name, key, false);
-    evs.push([key, js]);
+    // extra.eventRenames: events the decompiler filed under the wrong type (screen wavers whose capture-and-draw
+    // code came out as Outside Room; they only work when run in the draw pass at their depth)
+    const rn = (extra.eventRenames || {})[name + ' :: ' + key];
+    evs.push([rn || key, js]);
     o.events.push(key);
   }
   objectsData.push(o);
@@ -374,6 +377,9 @@ const spritesData = maps.sprites.map((name) => {
     frames.forEach((f, fi) => { const k = path.basename(f, '.png'); if (fo[k]) place.offs[fi] = fo[k].slice(); });
     pngs.forEach((p, i) => { if (p) { place.W = Math.max(place.W, place.offs[i][0] + p.w); place.H = Math.max(place.H, place.offs[i][1] + p.h); } });
   }
+  // extra.spriteSizes: canvas size where the trimmed frames cannot reveal it (sprites that must share a width)
+  const fsz = (extra.spriteSizes || {})[name];
+  if (fsz) { place.W = Math.max(place.W, fsz[0]); place.H = Math.max(place.H, fsz[1]); }
   if (place.offs.some(o => o[0] || o[1]) || place.W !== sp.w || place.H !== sp.h) {
     sp.offs = place.offs; sp.fw = sp.w; sp.fh = sp.h; sp.w = place.W; sp.h = place.H; placedCount++;
   }

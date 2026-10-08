@@ -4434,28 +4434,23 @@
      100
     ],
     [
-     178,
-     98,
+     173.5,
+     64,
      100
     ],
     [
-     198,
-     118,
+     193.5,
+     84,
      100
     ],
     [
-     218,
-     98,
+     213.5,
+     104,
      100
     ],
     [
-     198,
-     78,
-     100
-    ],
-    [
-     218,
-     58,
+     213.5,
+     64,
      100
     ],
     [
@@ -7437,6 +7432,54 @@
    "find": "script_execute(58/* scr_tempload */);\n    instance_destroy();",
    "replace": "script_execute(58/* scr_tempload */);\n    with(all) if(!persistent && id != other.id) instance_deactivate_object(id);\n    instance_destroy();",
    "note": "after the load, the battle's room is left this frame; its cutscene objects (Mad Dummy's trigger) kept running for one more step and locked the player in place in the loaded save"
+  },
+  {
+   "where": "obj_alphystrigger2 :: Step_0",
+   "find": "abs(obj_mainchara.x + 10 - alphys.x + alphys.sprite_width / 2) < 30",
+   "replace": "abs(obj_mainchara.x + 10 - (alphys.x + alphys.sprite_width / 2)) < 30",
+   "note": "lost parentheses after a minus: Alphys never knew she had reached Frisk and kept running"
+  },
+  {
+   "where": "SCRIPT scr_npc_watch",
+   "find": "xdist= obj_mainchara.x + obj_mainchara.sprite_width / 2 - x + sprite_width / 2;",
+   "replace": "xdist= obj_mainchara.x + obj_mainchara.sprite_width / 2 - (x + sprite_width / 2);",
+   "note": "lost parentheses after a minus: characters turned the wrong way to look at Frisk"
+  },
+  {
+   "where": "obj_blackbox_o :: Other_10",
+   "find": "1240, 0, 1)",
+   "replace": "1688/* obj_whitebox_o */, 0, 1)",
+   "note": "white boxes block the black boxes (bare object number guessed as obj_papyrusbody)"
+  },
+  {
+   "where": "obj_blackbox_o :: Other_11",
+   "find": "1240, 0, 1)",
+   "replace": "1688/* obj_whitebox_o */, 0, 1)",
+   "note": "white boxes block the black boxes"
+  },
+  {
+   "where": "obj_blackbox_o :: Other_12",
+   "find": "1240, 0, 1)",
+   "replace": "1688/* obj_whitebox_o */, 0, 1)",
+   "note": "white boxes block the black boxes"
+  },
+  {
+   "where": "obj_blackbox_o :: Other_13",
+   "find": "1240, 0, 1)",
+   "replace": "1688/* obj_whitebox_o */, 0, 1)",
+   "note": "white boxes block the black boxes"
+  },
+  {
+   "where": "obj_tileguy :: Other_10",
+   "find": "checky, 1215)) thistile= 3",
+   "replace": "checky, 1221/* obj_tilepurple */)) thistile= 3",
+   "note": "purple tiles slide (bare object number had been matched to obj_tilegreen)"
+  },
+  {
+   "where": "obj_tileguy :: Other_10",
+   "find": "checky, 1221)) thistile= 7",
+   "replace": "checky, 1215/* obj_tilegreen */)) thistile= 7",
+   "note": "green tiles stop and play the sound (bare number had been matched to obj_tilepurple)"
   }
  ],
  "spriteIndexFixes": {
@@ -7461,6 +7504,10 @@
   "211": "spr_jerryhurt",
   "264": "spr_woshwater",
   "299": "spr_undynex_melt",
+  "318": "spr_mettatonb_arms1",
+  "319": "spr_mettatonb_arms2",
+  "321": "spr_mettatonb_arms4",
+  "322": "spr_mettatonb_arms3",
   "356": "spr_barafist",
   "357": "spr_barafist_bug",
   "358": "spr_barafist_cat",
@@ -7473,6 +7520,9 @@
   "367": "spr_barahead3",
   "387": "spr_vulkinface",
   "388": "spr_vulkinface2",
+  "389": "spr_vulkinface3",
+  "390": "spr_vulkinface4",
+  "391": "spr_vulkinface5",
   "498": "spr_mettleg1",
   "499": "spr_mettleg2",
   "500": "spr_mettleg2_unflip",
@@ -7518,6 +7568,7 @@
   "881": "spr_shopkeeper1_face1",
   "882": "spr_shopkeeper1_face3",
   "986": "spr_labcamera_emergency",
+  "995": "spr_nothing",
   "1000": "spr_maincharad_fall",
   "1002": "spr_maincharau_fall",
   "1003": "spr_maincharal_fall",
@@ -7576,6 +7627,7 @@
   "1241": "spr_iglootop",
   "1345": "spr_sansburger",
   "1346": "spr_sansfries",
+  "1352": "spr_sans_trombone",
   "1376": "spr_mkid_dfall",
   "1377": "spr_mkid_lfall",
   "1378": "spr_mkid_rfall",
@@ -7603,6 +7655,12 @@
   "1511": "spr_spaghot_f",
   "1512": "spr_spaghot_g",
   "1513": "spr_spaghot_h",
+  "1656": "spr_mettaton_silent",
+  "1658": "spr_mettaton_shattered",
+  "1659": "spr_mettaton_wave",
+  "1660": "spr_mettaton_holdarm",
+  "1661": "spr_mettaton_pointingup",
+  "1662": "spr_mettaton_cackle",
   "1757": "spr_mettanchor_evillaugh",
   "1758": "spr_mettanchor_evillaugh_full",
   "1759": "spr_mettanchor_fingerup",
@@ -7612,10 +7670,19 @@
   "1763": "spr_mettanchor_handsonhead",
   "1764": "spr_mettanchor_mepose",
   "1765": "spr_mettanchor_shufflepaper",
+  "1767": "spr_bigbomb",
+  "1769": "spr_script_bomb",
+  "1771": "spr_videogame_bomb",
+  "1773": "spr_regpresent_bomb",
+  "1775": "spr_glassofwater_bomb",
   "1801": "spr_bigweb",
   "1804": "spr_tinyspider",
+  "1849": "spr_elevatordoor",
+  "1851": "spr_elevatordoor_vines",
   "1866": "spr_watercooler_water",
   "1869": "spr_coolerpuddle",
+  "1870": "spr_alabdoor_piece_r",
+  "1873": "spr_alabdoor_piece",
   "1933": "spr_tundrafog",
   "1952": "spr_temmie_l",
   "1986": "spr_face_torielhappytalk",
@@ -7698,7 +7765,19 @@
   "2088": "spr_face_asriel6",
   "2089": "spr_face_asriel7",
   "2090": "spr_face_asriel8",
-  "2091": "spr_face_asriel9"
+  "2091": "spr_face_asriel9",
+  "2098": "spr_darkelevator_l",
+  "2099": "spr_darkelevator_r",
+  "2100": "spr_door_redkey",
+  "2101": "spr_door_redkey_r",
+  "2102": "spr_door_redkey_brightr",
+  "2103": "spr_door_redkey_brightl",
+  "2104": "spr_megadoor_l",
+  "2105": "spr_megadoor_red",
+  "2106": "spr_megadoor_yellow",
+  "2107": "spr_megadoor_blue",
+  "2108": "spr_megadoor_green",
+  "2109": "spr_megadoor_r"
  },
  "spriteIndexFixesNote": "Bare sprite numbers whose index map entry was a guess. Each index is set to the named sprite (the names swap places), so every use of that number agrees.",
  "frameOffsets": {
@@ -7753,13 +7832,69 @@
     4,
     16
    ]
+  },
+  "spr_mettatonb": {
+   "spr_mettatonb_0": [
+    26,
+    0
+   ]
+  },
+  "spr_papyrus_rt": {
+   "spr_papyrus_rt_0": [
+    5,
+    1
+   ],
+   "spr_papyrus_rt_1": [
+    5,
+    1
+   ]
+  },
+  "spr_papyrus_lt": {
+   "spr_papyrus_lt_0": [
+    7,
+    1
+   ],
+   "spr_papyrus_lt_1": [
+    7,
+    1
+   ]
+  },
+  "spr_papyrus_ut": {
+   "spr_papyrus_ut_0": [
+    1,
+    1
+   ]
+  },
+  "spr_papyrus_dt": {
+   "spr_papyrus_dt_0": [
+    1,
+    1
+   ],
+   "spr_papyrus_dt_1": [
+    1,
+    1
+   ]
+  },
+  "spr_mettflour": {
+   "spr_mettflour_0": [
+    0,
+    0
+   ]
+  },
+  "spr_elevatordoorframe": {
+   "spr_elevatordoorframe_1": [
+    0,
+    0
+   ],
+   "spr_elevatordoorframe_0": [
+    5,
+    6
+   ]
   }
  },
  "frameOffsetsNote": "Hand-checked frame positions where the automatic trim recovery guesses wrong. Grillby behind the counter is lined up with his walking sprite so he stands behind the bar.",
  "invisibleObjects": [
-  "obj_undyne1",
-  "obj_playmovement",
-  "obj_underground_exit"
+  "obj_mettatonb_quiz"
  ],
  "invisibleObjectsNote": "Cutscene triggers that use the blue editor marker sprite but were exported as visible. Drawn, they show as a tall blue bar (obj_undyne1 is stretched 999 times).",
  "rectMaskSprites": [
@@ -7847,5 +7982,49 @@
    }
   }
  },
- "roomViewsNote": "View settings lost in export. In Undyne's speech the camera zooms and tilts on her (view 0) while view 1 keeps the text box at the bottom of the screen upright."
+ "roomViewsNote": "View settings lost in export. In Undyne's speech the camera zooms and tilts on her (view 0) while view 1 keeps the text box at the bottom of the screen upright.",
+ "backgroundPads": {
+  "bg_paphouse_c": [
+   174,
+   18,
+   320,
+   240
+  ]
+ },
+ "spriteSizes": {
+  "spr_papyrus_rt": [
+   26,
+   43
+  ],
+  "spr_papyrus_lt": [
+   26,
+   43
+  ],
+  "spr_papyrus_ut": [
+   26,
+   43
+  ],
+  "spr_papyrus_dt": [
+   26,
+   43
+  ]
+ },
+ "eventRenames": {
+  "obj_heatwaver :: Other_0": "Draw_0",
+  "obj_generalsiner :: Other_0": "Draw_0",
+  "obj_undynesiner2 :: Other_0": "Draw_0",
+  "obj_backgrounder_lava :: Other_0": "Draw_0",
+  "obj_fx_waver :: Other_0": "Draw_0",
+  "obj_bg_glower :: Other_0": "Draw_0",
+  "obj_flowey_bgdraw :: Other_0": "Draw_0",
+  "obj_playmovement :: Other_0": "Draw_0",
+  "obj_underground_exit :: Other_0": "Draw_0",
+  "obj_undyne1 :: Other_0": "Draw_0",
+  "obj_undyneb_body :: Other_0": "Draw_0",
+  "obj_gaster_room :: Other_0": "Draw_0",
+  "obj_multitileevent :: Other_0": "Draw_0",
+  "obj_muscbulgen :: Other_0": "Draw_0",
+  "obj_quickgen :: Other_0": "Draw_0",
+  "obj_greenspeargen :: Other_0": "Draw_0"
+ }
 }

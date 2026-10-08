@@ -4745,7 +4745,7 @@ OBJ[47] = {
   },
   "Step_2": function(self, other) {
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   S.scr_waver_lava(self, other, [1, 2]);
   }
 };
@@ -5744,7 +5744,7 @@ OBJ[60] = {
   self.d = 0;
   self.h = 130;
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   self.d = (self.d + 0.05);
   if ($t(F.keyboard_check(self, other, 39)))
     self.h = (self.h + 1);
@@ -8136,7 +8136,7 @@ OBJ[112] = {
   "Alarm_0": function(self, other) {
   self.sprite_index = 836;
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   if ($t($eq(self.script, 0)))
     F.script_execute(self, other, 28, self.b, self.c, self.d, self.e);
   }
@@ -27681,7 +27681,7 @@ OBJ[262] = {
   if ($t($eq(self.drawngr, 1)))
     F.sprite_delete(self, other, self.gr);
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   if ($t(F.instance_exists(self, other, 273)))
   {
     self.xx = ($rd(273, "x", self, other) - 20);
@@ -28476,7 +28476,7 @@ OBJ[264] = {
     self.done = 1;
   }
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   if ($t(($t($eq(GL.debug, 1)) && $t(F.keyboard_check_pressed(self, other, 17)))))
     self.rating = (self.rating - 1);
   if ($t((GL.turntimer < 1)))
@@ -30436,7 +30436,7 @@ OBJ[273] = {
   $wr(self.legs, "gravity", (self.gravity + 0.1), self, other);
   $wr(self.legs, "gravity_direction", 270, self, other);
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   $wr(self.head, "image_index", GL.faceemotion, self, other);
   if ($t($eq(self.movetype, 0)))
   {
@@ -32705,7 +32705,7 @@ OBJ[285] = {
   if ($t($eq(self.drawngr, 1)))
     F.sprite_delete(self, other, self.gr);
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   if ($t($eq(self.drawngr, 1)))
     F.sprite_delete(self, other, self.gr);
   self.gr = S.sprite_create_from_screen_x(self, other, [self.xx, self.yy, self.width, ($rd(759, "y", self, other) - self.yy), 0, 0, 0, 0]);
@@ -42280,7 +42280,7 @@ OBJ[341] = {
   if ($t($eq(self.drawngr, 1)))
     F.sprite_delete(self, other, self.gr);
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   self.x = $rd(759, "x", self, other);
   self.y = $rd(759, "y", self, other);
   self.xa = $rd(760, "x", self, other);
@@ -84637,7 +84637,7 @@ OBJ[694] = {
   self.alarm[$ix(0)] = self.firingspeed;
   self.firingspeed = (self.firingspeed - 2);
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   if ($t(F.instance_exists(self, other, 674)))
     $wrop(674, "vspeed", (_c) => (_c - 0.02), self, other);
   self.siner = (self.siner + 1);
@@ -93261,7 +93261,7 @@ OBJ[837] = {
   "Create_0": function(self, other) {
   self.siner = 0;
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   self.i = 0;
   while ($t((self.i < 8)))
   {
@@ -95469,7 +95469,7 @@ OBJ[866] = {
   $aw(GL, "msg", 11, "WHAT DO YOU&TWO THINK/%%");
   F.instance_create(self, other, 20, 20, 782);
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   if ($t(!$t(F.instance_exists(self, other, 782))))
     F.game_end(self, other);
   }
@@ -123194,7 +123194,7 @@ OBJ[1203] = {
   self.con = (self.con + 1);
   self.alarm[$ix(4)] = 60;
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   if ($t($eq(self.drawtext, 1)))
   {
     self.sn = F.instance_create(self, other, 60, 180, 1205);
@@ -124356,7 +124356,7 @@ OBJ[1210] = {
     self.con = 55.1;
   }
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   if ($t((self.con >= 20)))
   {
   }
@@ -124778,7 +124778,7 @@ OBJ[1212] = {
     self.thistile = 1;
   if ($t(F.instance_position(self, other, self.checkx, self.checky, 1214)))
     self.thistile = 2;
-  if ($t(F.instance_position(self, other, self.checkx, self.checky, 1215)))
+  if ($t(F.instance_position(self, other, self.checkx, self.checky, 1221)))
     self.thistile = 3;
   if ($t(F.instance_position(self, other, self.checkx, self.checky, 1217)))
     self.thistile = 4;
@@ -124786,7 +124786,7 @@ OBJ[1212] = {
     self.thistile = 5;
   if ($t(F.instance_position(self, other, self.checkx, self.checky, 1219)))
     self.thistile = 6;
-  if ($t(F.instance_position(self, other, self.checkx, self.checky, 1221)))
+  if ($t(F.instance_position(self, other, self.checkx, self.checky, 1215)))
     self.thistile = 7;
   self.tileid = F.collision_point(self, other, self.checkx, self.checky, 1213, 0, 1);
   }
@@ -127447,19 +127447,19 @@ OBJ[1242] = {
   self.create = 10;
   },
   "Other_13": function(self, other) {
-  if ($t(($t(!$t(F.collision_point(self, other, (self.x + 10), (self.y + 30), 1242, 0, 1))) && $t(!$t(F.collision_point(self, other, (self.x + 10), (self.y + 30), 1240, 0, 1))))))
+  if ($t(($t(!$t(F.collision_point(self, other, (self.x + 10), (self.y + 30), 1242, 0, 1))) && $t(!$t(F.collision_point(self, other, (self.x + 10), (self.y + 30), 1688, 0, 1))))))
     self.y = (self.y + 20);
   },
   "Other_12": function(self, other) {
-  if ($t(($t(!$t(F.collision_point(self, other, (self.x + 10), (self.y - 10), 1242, 0, 1))) && $t(!$t(F.collision_point(self, other, (self.x + 10), (self.y - 10), 1240, 0, 1))))))
+  if ($t(($t(!$t(F.collision_point(self, other, (self.x + 10), (self.y - 10), 1242, 0, 1))) && $t(!$t(F.collision_point(self, other, (self.x + 10), (self.y - 10), 1688, 0, 1))))))
     self.y = (self.y - 20);
   },
   "Other_11": function(self, other) {
-  if ($t(($t(!$t(F.collision_point(self, other, (self.x - 10), (self.y + 10), 1242, 0, 1))) && $t(!$t(F.collision_point(self, other, (self.x - 10), (self.y + 10), 1240, 0, 1))))))
+  if ($t(($t(!$t(F.collision_point(self, other, (self.x - 10), (self.y + 10), 1242, 0, 1))) && $t(!$t(F.collision_point(self, other, (self.x - 10), (self.y + 10), 1688, 0, 1))))))
     self.x = (self.x - 20);
   },
   "Other_10": function(self, other) {
-  if ($t(($t(!$t(F.collision_point(self, other, (self.x + 30), (self.y + 10), 1242, 0, 1))) && $t(!$t(F.collision_point(self, other, (self.x + 30), (self.y + 10), 1240, 0, 1))))))
+  if ($t(($t(!$t(F.collision_point(self, other, (self.x + 30), (self.y + 10), 1242, 0, 1))) && $t(!$t(F.collision_point(self, other, (self.x + 30), (self.y + 10), 1688, 0, 1))))))
     self.x = (self.x + 20);
   },
   "Draw_0": function(self, other) {
@@ -131616,7 +131616,7 @@ OBJ[1290] = {
       }
       self.con = 5;
     }
-    if ($t(($t($eq(self.con, 5)) && $t((F.abs(self, other, ((($rd(1570, "x", self, other) + 10) - $rd(self.alphys, "x", self, other)) + ($rd(self.alphys, "sprite_width", self, other) / 2))) < 30)))))
+    if ($t(($t($eq(self.con, 5)) && $t((F.abs(self, other, (($rd(1570, "x", self, other) + 10) - ($rd(self.alphys, "x", self, other) + ($rd(self.alphys, "sprite_width", self, other) / 2)))) < 30)))))
     {
       $wr(self.alphys, "image_speed", 0, self, other);
       $wr(self.alphys, "hspeed", 0, self, other);
@@ -131688,7 +131688,7 @@ OBJ[1290] = {
       if ($t(($rd(1570, "x", self, other) < $rd(self.alphys, "x", self, other))))
         $wr(self.alphys, "direction", 180, self, other);
       $wr(self.alphys, "speed", 6, self, other);
-      if ($t((F.abs(self, other, ((($rd(1570, "x", self, other) + 10) - $rd(self.alphys, "x", self, other)) + ($rd(self.alphys, "sprite_width", self, other) / 2))) < 30)))
+      if ($t((F.abs(self, other, (($rd(1570, "x", self, other) + 10) - ($rd(self.alphys, "x", self, other) + ($rd(self.alphys, "sprite_width", self, other) / 2)))) < 30)))
       {
         $wr(self.alphys, "image_speed", 0, self, other);
         $wr(self.alphys, "speed", 0, self, other);
@@ -132350,7 +132350,7 @@ OBJ[1297] = {
   $wr(self.blt, "dmg", self.dmg, self, other);
   self.alarm[$ix(0)] = self.firingspeed;
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   if ($t(F.instance_exists(self, other, 674)))
     $wrop(674, "vspeed", (_c) => (_c - 0.04), self, other);
   GL.turntimer = (GL.turntimer - 1);
@@ -155765,7 +155765,7 @@ OBJ[1546] = {
     self.con = 1;
   }
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   if ($t($eq(self.con, 1)))
   {
     GL.interact = 1;
@@ -156380,7 +156380,7 @@ OBJ[1548] = {
   if ($t($eq(self.con, 0)))
     self.con = 1;
   },
-  "Other_0": function(self, other) {
+  "Draw_0": function(self, other) {
   if ($t(($t(!$eq($rd(1570, "x", self, other), $rd(1570, "xprevious", self, other))) || $t(!$eq($rd(1570, "y", self, other), $rd(1570, "yprevious", self, other))))))
     self.helltrigger = (self.helltrigger + 1);
   }
@@ -188732,7 +188732,7 @@ S["scr_npc_halt"] = function(self, other, $a) {
 S["scr_npc_watch"] = function(self, other, $a) {
   if ($t(($t($eq($a[0], 0)) && $t(F.instance_exists(self, other, 1570)))))
   {
-    self.xdist = ((($rd(1570, "x", self, other) + ($rd(1570, "sprite_width", self, other) / 2)) - self.x) + (self.sprite_width / 2));
+    self.xdist = (($rd(1570, "x", self, other) + ($rd(1570, "sprite_width", self, other) / 2)) - (self.x + (self.sprite_width / 2)));
     self.ydist = ($rd(1570, "bbox_top", self, other) - self.bbox_top);
     if ($t((F.abs(self, other, self.xdist) >= F.abs(self, other, self.ydist))))
     {
@@ -188751,7 +188751,7 @@ S["scr_npc_watch"] = function(self, other, $a) {
   }
   if ($t(($t($eq($a[0], 1)) && $t(F.instance_exists(self, other, 1570)))))
   {
-    self.xdist = ((($rd(1570, "x", self, other) + ($rd(1570, "sprite_width", self, other) / 2)) - self.x) + (self.sprite_width / 2));
+    self.xdist = (($rd(1570, "x", self, other) + ($rd(1570, "sprite_width", self, other) / 2)) - (self.x + (self.sprite_width / 2)));
     self.ydist = ($rd(1570, "bbox_top", self, other) - self.bbox_top);
     if ($t((F.abs(self, other, self.xdist) >= F.abs(self, other, self.ydist))))
     {

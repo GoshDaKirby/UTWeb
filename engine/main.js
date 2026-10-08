@@ -85,7 +85,10 @@
     UT.assetsReady = true;
     setStatus(UT.touch && UT.touch.active ? 'Tap to start' : 'Click or press any key to start');
     $('start').style.display = 'flex';
-    const go = () => {
+    const go = (e) => {
+      // clicks and key presses on the save buttons belong to them, not to starting the game
+      const inSaves = e && e.target && e.target.closest && e.target.closest('#saves');
+      if (inSaves && (e.type === 'pointerdown' || e.key === 'Enter' || e.key === ' ')) return;
       if (UT.started) return; UT.started = true;
       $('start').style.display = 'none'; setStatus('');
       window.removeEventListener('keydown', go, true); window.removeEventListener('pointerdown', go, true);
@@ -95,8 +98,36 @@
       UT.boot();
       UT.startLoop();
     };
+    wireSaves();
     if (cfg.autostart) { go(); return; }
     window.addEventListener('keydown', go, true); window.addEventListener('pointerdown', go, true);
+  }
+  // Export / import buttons on the start screen. They only exist before the game starts, so the game never
+  // has a save file open while it is being replaced.
+  function wireSaves() {
+    const msg = (t) => { $('saveMsg').textContent = t; };
+    const n = UT.saves.count();
+    msg(n ? '' : 'No save data in this browser yet.');
+    $('saveExport').onclick = () => {
+      $('saveExport').blur();
+      if (!UT.saves.count()) { msg('There is no save data to export yet.'); return; }
+      const blob = new Blob([UT.saves.exportText()], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'undertale_save_' + new Date().toISOString().slice(0, 10) + '.json';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      msg('Save exported (' + UT.saves.count() + ' files).');
+    };
+    $('saveImport').onclick = () => { $('saveImport').blur(); $('saveFile').value = ''; $('saveFile').click(); };
+    $('saveFile').onchange = () => {
+      const f = $('saveFile').files[0]; if (!f) return;
+      if (UT.saves.count() && !window.confirm('Importing replaces the save data currently in this browser. Continue?')) return;
+      f.text().then((t) => {
+        try { const k = UT.saves.importText(t); msg('Save imported (' + k + ' files). Start the game to continue from it.'); }
+        catch (err) { msg(err.message); }
+      });
+    };
   }
   UT.restartFromEnded = function () { $('ended').style.display = 'none'; UT.restartGame(); UT.startLoop(); };
   window.addEventListener('DOMContentLoaded', start);
