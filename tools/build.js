@@ -454,7 +454,14 @@ const fontsData = maps.fonts.map((name) => {
 });
 const soundsData = maps.sounds.map((name) => {
   const s = rd('sound/' + name + '.sound.gmx');
-  return { name, file: 'sound/audio/' + tag(s, 'data'), volume: (() => { const m = /<volume>\s*<volume>([\d.]+)<\/volume>/.exec(s) || /<volume>([\d.]+)<\/volume>/.exec(s); const v = m ? Number(m[1]) : 1; return isFinite(v) ? v : 1; })(), kind: num(tag(s, 'kind')) };
+  // the project names abc_123_a as .mp3 but only an .ogg ships; use whichever file actually exists
+  let sfile = 'sound/audio/' + tag(s, 'data');
+  if (!fs.existsSync(path.join(SRC, sfile))) {
+    const base = sfile.replace(/\.[^.\/]+$/, '');
+    const alt = ['.ogg', '.wav', '.mp3'].map(e => base + e).find(f => fs.existsSync(path.join(SRC, f)));
+    if (alt) sfile = alt;
+  }
+  return { name, file: sfile, volume: (() => { const m = /<volume>\s*<volume>([\d.]+)<\/volume>/.exec(s) || /<volume>([\d.]+)<\/volume>/.exec(s); const v = m ? Number(m[1]) : 1; return isFinite(v) ? v : 1; })(), kind: num(tag(s, 'kind')) };
 });
 const pathsData = maps.paths.map((name) => extra.paths[name] ? { name, ...extra.paths[name] } : { name, points: [], closed: false, smooth: false, precision: 4 });
 
